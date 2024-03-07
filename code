@@ -1,0 +1,27 @@
+// Function to generate random wind speed (in meters per second)
+function generateWindSpeed() {
+    return Math.random() * 20; // Generating a random number between 0 and 20
+}
+
+// Function to simulate wind direction
+function generateWindDirection() {
+    // Array of wind directions
+    const directions = ["North", "North-East", "East", "South-East", "South", "South-West", "West", "North-West"];
+    const randomIndex = Math.floor(Math.random() * directions.length); // Generating a random index
+    return directions[randomIndex]; // Returning random wind direction
+}
+
+// Function to get wind data
+function getWindData() {
+    const windSpeed = generateWindSpeed();
+    const windDirection = generateWindDirection();
+    return {
+        speed: windSpeed,
+        direction: windDirection
+    };
+}
+
+// Example usage
+const windData = getWindData();
+console.log("Wind Speed: " + windData.speed.toFixed(2) + " m/s");
+console.log("Wind Direction: " + windData.direction);
